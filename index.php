@@ -1,12 +1,3 @@
-<!DOCTYPE HTML>  
-<html>
-<head>
-<style>
-.error {color: #FF0000;}
-</style>
-</head>
-<body>  
-
 <?php
 // define variables and set to empty values
 $name = $surname = $email = $gender = $age = $hometown = "";
@@ -14,7 +5,7 @@ $name = $surname = $email = $gender = $age = $hometown = "";
 
 <h2>Webový formulár</h2>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+<form method="post">  
   Name: <input type="text" name="name" value="<?php echo $name;?>">
   <br><br>
   Surname: <input type="text" name="surname" value="<?php echo $surname;?>">
@@ -30,15 +21,15 @@ $name = $surname = $email = $gender = $age = $hometown = "";
   <input type="submit" name="submit" value="Submit">  
 </form>
 
-</body>
-</html>
-
 <?php
-$myfile = fopen("data.txt", "w") or die("Unable to open file");
-$name = "Ivana";
-fwrite($myfile, $name);
-
-$email = "solivanka";
-fwrite($myfile, $email);
-fclose($myfile);
+if(isset($_POST['submit'])){
+$name = "Name: ".$_POST['name']."
+";
+$surname = "Surname:".$_POST['surname']."
+";
+$file=fopen("data.txt", "a");
+fwrite($file, $name);
+fwrite($file, $surname);
+fclose($file);
+}
 ?>
