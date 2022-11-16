@@ -30,8 +30,11 @@ $name = $surname = $email = $gender = $age = $hometown = "";
   <input type="submit" name="submit" value="Submit">  
 </form>
 
+</body>
+</html>
+
 <?php
-$myfile = fopen("testfile.txt", "w") or die("Unable to open file");
+$myfile = fopen("data.txt", "w") or die("Unable to open file");
 $name = "Ivana";
 fwrite($myfile, $name);
 
@@ -39,7 +42,3 @@ $email = "solivanka";
 fwrite($myfile, $email);
 fclose($myfile);
 ?>
-
-
-</body>
-</html>
