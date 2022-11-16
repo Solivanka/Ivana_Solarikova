@@ -91,8 +91,7 @@ function test_input($data) {
 </form>
 
 
-
-
+<?php
 echo $_POST['name'];
 echo $_POST['email'];
 $myfile = fopen("data.txt", "w") or die("Unable to open file");
@@ -101,7 +100,7 @@ fwrite($myfile, $name);
 $email = $_POST['email']."\n";
 fwrite($myfile, $email);
 fclose($myfile);
-
+?>
 
 
 <?php
