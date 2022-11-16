@@ -9,10 +9,10 @@
 
 <?php
 // define variables and set to empty values
-$name = $surname = $email = $gender = $comment = $website = "";
+$name = $surname = $email = $gender = $age = $hometown = "";
 ?>
 
-<h2>PHP Form Validation Example</h2>
+<h2>Webový formulár</h2>
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   Name: <input type="text" name="name" value="<?php echo $name;?>">
@@ -21,7 +21,11 @@ $name = $surname = $email = $gender = $comment = $website = "";
   <br><br>
   E-mail: <input type="text" name="email" value="<?php echo $email;?>">
   <br><br>
-  Website: <input type="text" name="website" value="<?php echo $website;?>">
+  Gender: <input type="text" name="gender" value="<?php echo $website;?>">
+  <br><br>
+  Age: <input type="text" name="age" value="<?php echo $name;?>">
+  <br><br>
+  Hometown: <input type="text" name="hometown" value="<?php echo $surname;?>">
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
