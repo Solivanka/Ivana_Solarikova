@@ -22,14 +22,9 @@ $name = $surname = $email = $gender = $age = $hometown = "";
 </form>
 
 <?php
-if(isset($_POST['submit'])){
-$name = "Name: ".$_POST['name']."
-";
-$surname = "Surname:".$_POST['surname']."
-";
+extract($_REQUEST);
 $file=fopen("data.txt", "a");
 fwrite($file, $name);
 fwrite($file, $surname);
 fclose($file);
-}
 ?>
