@@ -9,8 +9,8 @@
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+$nameErr = $surnameErr = $emailErr = $genderErr = $websiteErr = "";
+$name = $surname = $email = $gender = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -70,6 +70,9 @@ function test_input($data) {
   Name: <input type="text" name="name" value="<?php echo $name;?>">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
+  Surname: <input type="text" name="surname" value="<?php echo $surname;?>">
+  <span class="error">* <?php echo $nameErr;?></span>
+  <br><br>
   E-mail: <input type="text" name="email" value="<?php echo $email;?>">
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
@@ -90,6 +93,8 @@ function test_input($data) {
 <?php
 echo "<h2>Your Input:</h2>";
 echo $name;
+echo "<br>";
+echo $surname;
 echo "<br>";
 echo $email;
 echo "<br>";
