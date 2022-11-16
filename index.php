@@ -107,3 +107,11 @@ echo $gender;
 
 </body>
 </html>
+
+<?php
+              
+$data=$_POST['name'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fclose($fp);
+?>
