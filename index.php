@@ -40,7 +40,7 @@ $name = $surname = $email = $gender = $comment = $website = "";
 </form>
 
 <?php
-$myfile = fopen("data.txt", "w") or die("Unable to open file");
+$myfile = fopen("testfile.txt", "w") or die("Unable to open file");
 $name = "Ivana";
 fwrite($myfile, $name);
 
