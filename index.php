@@ -40,16 +40,13 @@ $name = $surname = $email = $gender = $comment = $website = "";
 </form>
 
 <?php
-    echo $_POST['name'];
-    echo $_POST['email'];
+$myfile = fopen("data.txt", "w") or die("Unable to open file");
+$name = "Ivana";
+fwrite($myfile, $name);
 
-    $myfile = fopen("data.txt", "w") or die("Unable to open file");
-    $name = $_POST['name']."\n";
-    fwrite($myfile, $name);
-
-    $email = $_POST['email']."\n";
-    fwrite($myfile, $email);
-    fclose($myfile);
+$email = "solivanka";
+fwrite($myfile, $email);
+fclose($myfile);
 ?>
 
 
