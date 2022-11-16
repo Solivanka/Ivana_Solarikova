@@ -39,5 +39,19 @@ $name = $surname = $email = $gender = $comment = $website = "";
   <input type="submit" name="submit" value="Submit">  
 </form>
 
+<?php
+    echo $_POST['name'];
+    echo $_POST['email'];
+
+    $myfile = fopen("data.txt", "w") or die("Unable to open file");
+    $name = $_POST['name']."\n";
+    fwrite($myfile, $name);
+
+    $email = $_POST['email']."\n";
+    fwrite($myfile, $email);
+    fclose($myfile);
+?>
+
+
 </body>
 </html>
