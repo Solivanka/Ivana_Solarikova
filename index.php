@@ -11,10 +11,12 @@ E-mail: <input type="text" name="email"><br>
 </html>
 
 <?php
-$myfile = fopen("data.txt", "w") or die("Unable to open file!");
-$txt = "ivka\n";
-fwrite($myfile, $txt);
-$txt = "ivka\n";
-fwrite($myfile, $txt);
-fclose($myfile);
+              
+if(isset($_POST['name']))
+{
+$data=$_POST['name'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fclose($fp);
+}
 ?>
