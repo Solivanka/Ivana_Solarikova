@@ -1,11 +1,10 @@
-<?php
-// define variables and set to empty values
-$name = $surname = $email = $gender = $age = $hometown = "";
-?>
+<!DOCTYPE html>
+<html>
+<head>
 
 <h2>Webový formulár</h2>
 
-<form method="post">  
+<form action="index.php" method="post">  
   Name: <input type="text" name="name" value="<?php echo $name;?>">
   <br><br>
   Surname: <input type="text" name="surname" value="<?php echo $surname;?>">
@@ -18,13 +17,19 @@ $name = $surname = $email = $gender = $age = $hometown = "";
   <br><br>
   Hometown: <input type="text" name="hometown" value="<?php echo $surname;?>">
   <br><br>
-  <input type="submit" name="submit" value="Submit">  
+  <input type="submit" name="save" value="Save data in text file">
 </form>
 
+</body>
+</html>
+
 <?php
-extract($_REQUEST);
-$file=fopen("data.txt", "a");
-fwrite($file, $name);
-fwrite($file, $surname);
-fclose($file);
+              
+if(isset($_POST['surname']))
+{
+$data=$_POST['surname'];
+$fp = fopen('data.txt', 'a');
+fwrite($fp, $data);
+fclose($fp);
+}
 ?>
