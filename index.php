@@ -28,12 +28,13 @@ E-mail: <input type="text" name="email" value="<?php echo $email;?>">
 </html>
 
 <?php
-              
-if(isset($_POST['name']))
-{
-$data=$_POST['name'];
-$fp = fopen('data.txt', 'a');
-fwrite($fp, $data);
-fclose($fp);
-}
+
+    extract ($_REQUEST);
+    $file = fopen("data.txt", "a");
+
+    fwrite ($file, "name: ");
+    fwrite ($file, $name);
+
+    fclose($file);
+
 ?>
