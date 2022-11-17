@@ -1,4 +1,9 @@
 <html>
+
+<head>
+  <title>Web form</title>
+</head>
+
 <body>
 
 <form action="index.php" method="post">
