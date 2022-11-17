@@ -4,7 +4,7 @@
 $name = $surname = $age = $hometown = $school = $email = "";
 ?>
 
-<h2>PHP Form Validation Example</h2>
+<h2>WEB FORM</h2>
 
 <body>
 
@@ -23,19 +23,6 @@ E-mail: <input type="text" name="email" value="<?php echo $email;?>">
 <br><br>
 <input type="submit">
 </form>
-
-<?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $website;
-echo "<br>";
-echo $comment;
-echo "<br>";
-echo $gender;
-?>
 
 </body>
 </html>
