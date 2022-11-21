@@ -1,16 +1,3 @@
-<?php
-if(isset($_POST['submit'])){
-$Name = "Name:".$_POST['name']."
-";
-$Pass = "Surname:".$_POST['surname']."
-";
-$file=fopen("data.txt", "a");
-fwrite($file, $Name);
-fwrite($file, $Pass);
-fclose($file);
-}
-?>
-
 <html>
 
 <?php
@@ -41,13 +28,14 @@ E-mail: <input type="text" name="email" value="<?php echo $email;?>">
 </html>
 
 <?php
-
-    extract ($_REQUEST);
-    $file = fopen("data.txt", "a");
-
-    fwrite ($file, "name: ");
-    fwrite ($file, $name);
-
-    fclose($file);
-
+if(isset($_POST['submit'])){
+$Name = "Name:".$_POST['name']."
+";
+$Pass = "Surname:".$_POST['surname']."
+";
+$file=fopen("data.txt", "a");
+fwrite($file, $Name);
+fwrite($file, $Pass);
+fclose($file);
+}
 ?>
