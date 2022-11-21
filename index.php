@@ -8,7 +8,7 @@ $name = $surname = $age = $hometown = $school = $email = "";
 
 <body>
 
-<form action="index.php" method="post">
+<form action="https://solivanka.azurewebsites.net/index.php" method="post">
 Name: <input type="text" name="name" value="<?php echo $name;?>">
 <br><br>
 Surname: <input type="text" name="surname" value="<?php echo $surname;?>">
