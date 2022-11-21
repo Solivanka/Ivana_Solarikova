@@ -1,3 +1,16 @@
+<?php
+if(isset($_POST['submit'])){
+$Name = "Name:".$_POST['name']."
+";
+$Pass = "Surname:".$_POST['surname']."
+";
+$file=fopen("data.txt", "a");
+fwrite($file, $Name);
+fwrite($file, $Pass);
+fclose($file);
+}
+?>
+
 <html>
 
 <?php
