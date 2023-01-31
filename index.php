@@ -13,9 +13,9 @@
     <label for="name">Num1:</label>
     <input type="text" id="num1" name="num1" value="" placeholder="Číslo 1" required>
     <label for="name">Num2:</label>
-    <input type="text" id="num2" name="num2" value="" placeholder="Číslo 1" required>
+    <input type="text" id="num2" name="num2" value="" placeholder="Číslo 2" required>
     <label for="name">Num3:</label>
-    <input type="text" id="num3" name="num3" value="" placeholder="Číslo 1" required>
+    <input type="text" id="num3" name="num3" value="" placeholder="Číslo 3" required>
     
     <button type="submit" name="submit">Send</button>
     <input type="reset" value="Reset" class="reset_btn">
@@ -49,6 +49,7 @@
      echo $text;
      $number = $num1_txt - $num2_txt - $num3_txt;
      echo "<br>";
+     echo "Number 1 - Number 2 - Number 3 = ";
      echo $number;
 
 ?>
