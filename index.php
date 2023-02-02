@@ -22,7 +22,7 @@ function resetCounter() {
     } else {
       sessionStorage.clickcount = 1;
     }
-    document.getElementById("result2").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+    document.getElementById("result2").innerHTML = "You have reset the button " + sessionStorage.clickcount + " time(s) in this session.";
   } else {
     document.getElementById("result2").innerHTML = "Sorry, your browser does not support web storage...";
   }
