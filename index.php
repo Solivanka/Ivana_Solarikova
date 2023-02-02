@@ -15,7 +15,7 @@ function clickCounter() {
   }
 }
 
-function clickCounter() {
+function resetCounter() {
   if (typeof(Storage) !== "undefined") {
     if (sessionStorage.clickcount) {
       sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
@@ -36,8 +36,6 @@ function clickCounter() {
 <div id="result"></div>
 <p><button onclick="resetCounter()" type="button">Reset!</button></p>
 <div id="result"></div>
-<p>Click the button to see the counter increase.</p>
-<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
 
 </body>
 </html>
