@@ -1,27 +1,27 @@
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counter - increase, decrease, reset</title>
-
+<script>
+function clickCounter() {
+  if (typeof(Storage) !== "undefined") {
+    if (sessionStorage.clickcount) {
+      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+    } else {
+      sessionStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
+</script>
 </head>
-
 <body>
-    <header>
-        <h4 class="headline">Counter - increase, decrease, reset via click</h4>
-    </header>
-    <main class="container">
-        <span class="counter-value" data-value="counter-value">0</span>
-        <div class="button-container">
-            <button class="btn decrease" data-btn="btn-decrease">decrease</button>
-            <button class="btn reset" data-btn="btn-reset">reset</button>
-            <button class="btn increase" data-btn="btn-increase">increase</button>
-        </div>
-    </main>
-    <script src="./index.js"></script>
-</body>
 
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+
+</body>
 </html>
