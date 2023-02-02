@@ -3,22 +3,23 @@
 <head>
 <script>
 function clickCounter() {
-    if (localStorage.clickcount) {
-      localStorage.clickcount = Number(localStorage.clickcount)+1;
+  if (typeof(Storage) !== "undefined") {
+    if (sessionStorage.clickcount) {
+      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
     } else {
-      localStorage.clickcount = 1;
+      sessionStorage.clickcount = 1;
     }
-    document.getElementById("result").innerHTML = "Tlacitko si stlacil " + localStorage.clickcount + " krat.";
+    document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
   }
 }
 </script>
 </head>
 <body>
 
-<p><button onclick="clickCounter()" type="button">Klikni!</button></p>
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
 <div id="result"></div>
 <p>Click the button to see the counter increase.</p>
-<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
 
 </body>
 </html>
