@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script>
+
+function clickCounter() {
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
+</script>
+</head>
 <body>
-<form method="post">
 
-<button type="submit" name="submit">Send</button>
-<input type="reset" value="Reset" class="reset_btn" name="reset">
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
 
-<?php
-
-$button = 2;
-    if(isset($_POST["submit"]))
-    {
-        $button++;
-    }
-    if(isset($_POST["reset"]))
-    {
-        $button = 0;
-    }
-    echo $button;
-?>
-
-</form>
 </body>
 </html>
