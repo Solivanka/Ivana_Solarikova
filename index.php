@@ -15,15 +15,14 @@ function clickCounter() {
   }
 }
 
-function resetCounter() {
+function clickCounter() {
   if (typeof(Storage) !== "undefined") {
     if (sessionStorage.clickcount) {
-      sessionStorage.clickcount = Reset(sessionStorage.clickcount)+1;
-      Number(sessionStorage.clickcount) = 0;
+      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
     } else {
       sessionStorage.clickcount = 1;
     }
-    document.getElementById("result").innerHTML = "You have reset the button " + sessionStorage.clickcount + " time(s) in this session.";
+    document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
   } else {
     document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
   }
