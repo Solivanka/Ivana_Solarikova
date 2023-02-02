@@ -34,7 +34,7 @@ function resetCounter() {
 
 <p><button onclick="clickCounter()" type="button">Click me!</button></p>
 <div id="result"></div>
-<p><button onclick="clickCounter()" type="button">Reset!</button></p>
+<p><button onclick="resetCounter()" type="button">Reset!</button></p>
 <div id="result"></div>
 <p>Click the button to see the counter increase.</p>
 <p>Close the browser tab (or window), and try again, and the counter is reset.</p>
