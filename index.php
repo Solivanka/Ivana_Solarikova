@@ -19,6 +19,7 @@ function resetCounter() {
   if (typeof(Storage) !== "undefined") {
     if (sessionStorage.clickcount) {
       sessionStorage.clickcount = Reset(sessionStorage.clickcount)+1;
+      Number(sessionStorage.clickcount) = 0;
     } else {
       sessionStorage.clickcount = 1;
     }
