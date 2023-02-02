@@ -1,27 +1,29 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<script>
-function clickCounter() {
-  if (typeof(Storage) !== "undefined") {
-    if (sessionStorage.clickcount) {
-      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
-    } else {
-      sessionStorage.clickcount = 1;
-    }
-    document.getElementById("result").innerHTML = "Klikol si " + sessionStorage.clickcount + " krat.";
-  } else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
-  }
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter - increase, decrease, reset</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-
-<p><button onclick="clickCounter()" type="button">Klikni!</button></p>
-<div id="result"></div>
-<p>Click the button to see the counter increase.</p>
-<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
-
+    <header>
+        <h4 class="headline">Counter - increase, decrease, reset via click</h4>
+    </header>
+    <main class="container">
+        <span class="counter-value" data-value="counter-value">0</span>
+        <div class="button-container">
+            <button class="btn decrease" data-btn="btn-decrease">decrease</button>
+            <button class="btn reset" data-btn="btn-reset">reset</button>
+            <button class="btn increase" data-btn="btn-increase">increase</button>
+        </div>
+    </main>
+    <script src="./index.js"></script>
 </body>
+
 </html>
