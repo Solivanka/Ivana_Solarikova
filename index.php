@@ -1,30 +1,33 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Counter and Refresh Button</title>
+    <title>Counter and Refresh Button</title>
 </head>
 <body>
-	<h1>Counter: <?php echo isset($_COOKIE['count']) ? $_COOKIE['count'] : 0; ?></h1>
-	<form action="" method="post">
-		<button type="submit" name="counter">Count</button>
-		<button type="submit" name="refresh">Refresh</button>
-	</form>
+    <?php
+    session_start();
+
+    if(isset($_SESSION['count'])) {
+        $_SESSION['count']++;
+    } else {
+        $_SESSION['count'] = 1;
+    }
+
+    echo "<h1>Counter: ".$_SESSION['count']."</h1>";
+    ?>
+
+    <form action="" method="post">
+        <input type="submit" name="counter" value="Counter">
+        <input type="submit" name="refresh" value="Refresh">
+    </form>
+
+    <?php
+    if(isset($_POST['counter'])) {
+        $_SESSION['count']++;
+    }
+
+    if(isset($_POST['refresh'])) {
+        $_SESSION['count'] = 0;
+    }
+    ?>
 </body>
 </html>
-
-<?php
-if(isset($_POST['counter'])) {
-	if(isset($_COOKIE['count'])) {
-		$count = $_COOKIE['count'] + 1;
-	} else {
-		$count = 1;
-	}
-	setcookie('count', $count, time() + (86400 * 30), "/");
-	header("Location: index.php");
-}
-
-if(isset($_POST['refresh'])) {
-	setcookie('count', 0, time() - (86400 * 30), "/");
-	header("Location: index.php");
-}
-?>
