@@ -1,43 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-
-function clickCounter() {
-  if (typeof(Storage) !== "undefined") {
-    if (localStorage.clickcount) {
-      localStorage.clickcount = Number(localStorage.clickcount)+1;
-    } else {
-      localStorage.clickcount = 1;
-    }
-    document.getElementById("result1").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
-  } else {
-    document.getElementById("result1").innerHTML = "Sorry, your browser does not support web storage...";
-  }
-}
-
-function resetCounter() {
-  if (typeof(Storage) !== "undefined") {
-    if (localStorage.clickcount) {
-      localStorage.clickcount = Reset(localStorage.clickcount)+1;
-    } else {
-      localStorage.clickcount = 1;
-    }
-    document.getElementById("result2").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
-  } else {
-    document.getElementById("result2").innerHTML = "Sorry, your browser does not support web storage...";
-  }
-}
-
-
-</script>
+	<title>Counter and Refresh Button</title>
 </head>
 <body>
-
-<p><button onclick="clickCounter()" type="button">Click me!</button></p>
-<div id="result1"></div>
-<p><button onclick="resetCounter()" type="button">Reset!</button></p>
-<div id="result2"></div>
-
+	<h1>Counter: <?php echo isset($_COOKIE['count']) ? $_COOKIE['count'] : 0; ?></h1>
+	<form action="" method="post">
+		<button type="submit" name="counter">Count</button>
+		<button type="submit" name="refresh">Refresh</button>
+	</form>
 </body>
 </html>
+
+<?php
+if(isset($_POST['counter'])) {
+	if(isset($_COOKIE['count'])) {
+		$count = $_COOKIE['count'] + 1;
+	} else {
+		$count = 1;
+	}
+	setcookie('count', $count, time() + (86400 * 30), "/");
+	header("Location: index.php");
+}
+
+if(isset($_POST['refresh'])) {
+	setcookie('count', 0, time() - (86400 * 30), "/");
+	header("Location: index.php");
+}
+?>
